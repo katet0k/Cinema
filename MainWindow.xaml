@@ -3,10 +3,154 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Cinema"
+        xmlns:local="clr-namespace:Cinema" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow"  WindowState="Maximized">
+        Title="MainWindow" Width="1920" Height="1080">
+    <Window.Background>
+        <ImageBrush ImageSource="Assets\Background.png"/>
+    </Window.Background>
     <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Перший роздільник -->
+        <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ResizeBehavior="PreviousAndNext" />
+
+        <!-- Другий роздільник -->
+        <GridSplitter Grid.Column="3" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ResizeBehavior="PreviousAndNext" />
+
+        <!-- Друга частина -->
+
+        <!-- Search -->
+        <Grid Grid.Column="2">
+            <Border VerticalAlignment="Top" Margin="50,20,50,0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.5"/>
+                </Border.Effect>
+                <Border Background="White" Opacity="0.03" CornerRadius="30" Width="850" Height="50">
+                    <Border.BitmapEffect>
+                        <OuterGlowBitmapEffect GlowColor="White" GlowSize="4"/>
+                    </Border.BitmapEffect>
+                    <Grid>
+                        <Grid.Effect>
+                            <BlurEffect Radius="20"/>
+                        </Grid.Effect>
+                    </Grid>
+                </Border>
+            </Border>
+
+            <TextBox
+                Margin="70,30,50,0"
+                Foreground="LightGray"
+                Text="Type to search..."
+                TextWrapping="Wrap" />
+        </Grid>
+
+        <!-- Trailer -->
+        <Grid Grid.Column="2">
+            <Border Width="850" Height="350" Margin="0,0,0,500">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.5"/>
+                </Border.Effect>
+                <Border Background="White" Opacity="0.03" CornerRadius="30" Width="850" Height="350">
+                    <Border.BitmapEffect>
+                        <OuterGlowBitmapEffect GlowColor="White" GlowSize="4"/>
+                    </Border.BitmapEffect>
+                    <Grid>
+                        <Grid.Effect>
+                            <BlurEffect Radius="20"/>
+                        </Grid.Effect>
+                    </Grid>
+                </Border>
+            </Border>
+
+            <Grid
+                Width="200"
+                Margin="0,0,620,220">
+                <Button
+                    materialDesign:ButtonAssist.CornerRadius="25"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    Style="{StaticResource MaterialDesignRaisedSecondaryButton}"
+                    ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+                    <TextBlock
+                        Text="Watch the trailer" />
+                </Button>
+            </Grid>
+        </Grid>
+
+        <!-- Films -->
+        <Grid Grid.Column="2">
+            <Border Width="200" Height="300" Margin="0,220,650,0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.5"/>
+                </Border.Effect>
+                <Border Background="White" Opacity="0.03" CornerRadius="30" Width="200" Height="300">
+                    <Border.BitmapEffect>
+                        <OuterGlowBitmapEffect GlowColor="White" GlowSize="4"/>
+                    </Border.BitmapEffect>
+                    <Grid>
+                        <Grid.Effect>
+                            <BlurEffect Radius="20"/>
+                        </Grid.Effect>
+                    </Grid>
+                </Border>
+            </Border>
+
+            <Border Width="200" Height="300" Margin="0,220,210,0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.5"/>
+                </Border.Effect>
+                <Border Background="White" Opacity="0.03" CornerRadius="30" Width="200" Height="300">
+                    <Border.BitmapEffect>
+                        <OuterGlowBitmapEffect GlowColor="White" GlowSize="4"/>
+                    </Border.BitmapEffect>
+                    <Grid>
+                        <Grid.Effect>
+                            <BlurEffect Radius="20"/>
+                        </Grid.Effect>
+                    </Grid>
+                </Border>
+            </Border>
+
+            <Border Width="200" Height="300" Margin="220,220,0,0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.5"/>
+                </Border.Effect>
+                <Border Background="White" Opacity="0.03" CornerRadius="30" Width="200" Height="300">
+                    <Border.BitmapEffect>
+                        <OuterGlowBitmapEffect GlowColor="White" GlowSize="4"/>
+                    </Border.BitmapEffect>
+                    <Grid>
+                        <Grid.Effect>
+                            <BlurEffect Radius="20"/>
+                        </Grid.Effect>
+                    </Grid>
+                </Border>
+            </Border>
+
+            <Border Width="200" Height="300" Margin="650,220,0,0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.5"/>
+                </Border.Effect>
+                <Border Background="White" Opacity="0.03" CornerRadius="30" Width="200" Height="300">
+                    <Border.BitmapEffect>
+                        <OuterGlowBitmapEffect GlowColor="White" GlowSize="4"/>
+                    </Border.BitmapEffect>
+                    <Grid>
+                        <Grid.Effect>
+                            <BlurEffect Radius="20"/>
+                        </Grid.Effect>
+                    </Grid>
+                </Border>
+            </Border>
+
+        </Grid>
 
     </Grid>
 </Window>
