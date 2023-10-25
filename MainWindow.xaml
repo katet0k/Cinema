@@ -5,8 +5,208 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cinema"
         mc:Ignorable="d"
-        Title="MainWindow"  WindowState="Maximized">
+        Title="MainWindow" WindowState="Maximized" d:DesignHeight="1080" d:DesignWidth="1920">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#0D0C0C" Offset="0" />
+                <GradientStop Color="#1B2949" Offset="0.25" />
+                <GradientStop Color="#27454B" Offset="0.5" />
+                <GradientStop Color="#4E3955" Offset="0.75" />
+                <GradientStop Color="#21171F" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <!-- Головний вміст -->
+        <Grid Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
 
+            <!-- Перший роздільник -->
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ResizeBehavior="PreviousAndNext" />
+
+            <!-- Другий роздільник -->
+            <GridSplitter Grid.Column="3" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ResizeBehavior="PreviousAndNext" />
+
+            <!-- Перша частина -->
+            <Border Grid.Column="0">
+                <TextBlock Text="Перша частина" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Border>
+
+            <!-- Друга частина -->
+            <Border Grid.Column="2">
+                <TextBlock Text="Друга частина" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Border>
+
+            <!-- Третя частина -->
+            <Border Grid.Column="4" CornerRadius="30" Width="30" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 65 65 0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.5"/>
+                </Border.Effect>
+                <Grid>
+                    <Image Source="C:\Users\kostu\source\repos\Cinema\image\settings.png" Stretch="Uniform" />
+                </Grid>
+            </Border>
+            
+            <Border Grid.Column="4" Background="White" Opacity="0.03" CornerRadius="30" Width="60" Height="60" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 50 50 0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="1"/>
+                </Border.Effect>
+                <Grid>
+                    <Grid.Effect>
+                        <BlurEffect Radius="10"/>
+                    </Grid.Effect>
+                </Grid>
+            </Border>
+            <Border Grid.Column="4" Width="400" Height="450">
+                <TextBlock Text="Mavka: Forest song" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,20,0,0" FontSize="20" Foreground="White" Opacity="1"/>
+            </Border>
+            <Border Grid.Column="4" Width="400" Height="450">
+                <TextBlock Text="14 sessions" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,50,0,0" FontSize="15" Foreground="White" Opacity="0.5"/>
+            </Border>
+
+            <Border Grid.Column="4" Width="400" Height="450">
+                <TextBlock Text="10:30" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,20,30,0" FontSize="20" Foreground="White" Opacity="1"/>
+            </Border>
+            <Border Grid.Column="4" Width="400" Height="450">
+                <TextBlock Text="21 Mar" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,50,37,0" FontSize="12" Foreground="White" Opacity="0.5"/>
+            </Border>
+            <Border Grid.Column="4" Background="#B4D429" CornerRadius="15" Width="45" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="160 0 0 355">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.2"/>
+                </Border.Effect>
+                <Grid>
+                    <Image Source="C:\Users\kostu\source\repos\Cinema\image\calendar.png" Stretch="Uniform" Width="30" Height="30" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="4" Background="#B4D429" Width="300" CornerRadius="5" Height="5" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 200">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="-10" Direction="0" Color="#B4D429" Opacity="0.9" BlurRadius="50"/>
+                </Border.Effect>
+                <Grid>
+
+                </Grid>
+            </Border>
+            <Border Grid.Column="4" CornerRadius="30" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 270 70" Opacity="0.5">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.1"/>
+                </Border.Effect>
+                <Grid>
+                    <Image Source="C:\Users\kostu\source\repos\Cinema\image\sofa.png" Stretch="Uniform" />
+                </Grid>
+            </Border>
+            <Border Grid.Column="4" CornerRadius="30" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 90 70">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.1"/>
+                </Border.Effect>
+                <Grid>
+                    <Image Source="C:\Users\kostu\source\repos\Cinema\image\sofa.png" Stretch="Uniform" />
+                </Grid>
+            </Border>
+            <Border Grid.Column="4" CornerRadius="30" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin=" 90 0 0 70">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.1"/>
+                </Border.Effect>
+                <Grid>
+                    <Image Source="C:\Users\kostu\source\repos\Cinema\image\sofa.png" Stretch="Uniform" />
+                </Grid>
+            </Border>
+            <Border Grid.Column="4" CornerRadius="30" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="270 0 0 70">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.1"/>
+                </Border.Effect>
+                <Grid>
+                    <Image Source="C:\Users\kostu\source\repos\Cinema\image\sofa.png" Stretch="Uniform" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="4" CornerRadius="30" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 150 270 70">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.1"/>
+                </Border.Effect>
+                <Grid>
+                    <Image Source="C:\Users\kostu\source\repos\Cinema\image\sofa.png" Stretch="Uniform" />
+                </Grid>
+            </Border>
+            <Border Grid.Column="4" CornerRadius="30" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 150 90 70">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.1"/>
+                </Border.Effect>
+                <Grid>
+                    <Image Source="C:\Users\kostu\source\repos\Cinema\image\sofa.png" Stretch="Uniform" />
+                </Grid>
+            </Border>
+            <Border Grid.Column="4" CornerRadius="30" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin=" 90 150 0 70">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.1"/>
+                </Border.Effect>
+                <Grid>
+                    <Image Source="C:\Users\kostu\source\repos\Cinema\image\sofa.png" Stretch="Uniform" />
+                </Grid>
+            </Border>
+            <Border Grid.Column="4" CornerRadius="30" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="270 150 0 70">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.1"/>
+                </Border.Effect>
+                <Grid>
+                    <Image Source="C:\Users\kostu\source\repos\Cinema\image\sofa.png" Stretch="Uniform" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="4" CornerRadius="30" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 300 270 70">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.1"/>
+                </Border.Effect>
+                <Grid>
+                    <Image Source="C:\Users\kostu\source\repos\Cinema\image\sofa.png" Stretch="Uniform" />
+                </Grid>
+            </Border>
+            <Border Grid.Column="4" CornerRadius="30" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 300 90 70">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.1"/>
+                </Border.Effect>
+                <Grid>
+                    <Image Source="C:\Users\kostu\source\repos\Cinema\image\sofa.png" Stretch="Uniform" />
+                </Grid>
+            </Border>
+            <Border Grid.Column="4" CornerRadius="30" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin=" 90 300 0 70">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.1"/>
+                </Border.Effect>
+                <Grid>
+                    <Image Source="C:\Users\kostu\source\repos\Cinema\image\sofa.png" Stretch="Uniform" />
+                </Grid>
+            </Border>
+            <Border Grid.Column="4" CornerRadius="30" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="270 300 0 70">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.1"/>
+                </Border.Effect>
+                <Grid>
+                    <Image Source="C:\Users\kostu\source\repos\Cinema\image\sofa.png" Stretch="Uniform" />
+                </Grid>
+            </Border>
+            
+            <Border Grid.Column="4" Width="400" Height="450" Margin="0 0 0 70">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.5"/>
+                </Border.Effect>
+                <Border Background="White" Opacity="0.03" CornerRadius="30" Width="400" Height="450">
+                    <Border.BitmapEffect>
+                        <OuterGlowBitmapEffect GlowColor="White" GlowSize="4"/>
+                    </Border.BitmapEffect>
+                    <Grid>
+                        <Grid.Effect>
+                            <BlurEffect Radius="20"/>
+                        </Grid.Effect>
+                    </Grid>
+                </Border>
+            </Border>
+        </Grid>
     </Grid>
 </Window>
