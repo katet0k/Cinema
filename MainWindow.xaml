@@ -5,8 +5,109 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cinema"
         mc:Ignorable="d"
-        Title="MainWindow"  WindowState="Maximized">
+        Title="MainWindow" WindowState="Maximized" d:DesignHeight="878.4" d:DesignWidth="1910.4">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#0D0C0C" Offset="0" />
+                <GradientStop Color="#1B2949" Offset="0.25" />
+                <GradientStop Color="#27454B" Offset="0.5" />
+                <GradientStop Color="#4E3955" Offset="0.75" />
+                <GradientStop Color="#21171F" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
 
+        <!-- Головний вміст -->
+        <Grid Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Перший роздільник -->
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ResizeBehavior="PreviousAndNext" />
+
+            <!-- Другий роздільник -->
+            <GridSplitter Grid.Column="3" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ResizeBehavior="PreviousAndNext" />
+
+            <!-- Перша частина -->
+            <Border Grid.Column="0" Width="100" Height="100">
+
+
+                <TextBlock Text="CINEMACITY" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20" FontFamily="Montserrat" FontWeight="SemiBold"  Foreground="#B4D429" Margin="6,-325,-30,0"/>
+
+            </Border>
+            <Image Source="C:\Users\Dasha\source\repos\Cinema\images\1.png" Width="28" Height="40" Margin="0,-738,125,0"/>
+
+            <Border
+                
+                Background="#171718" CornerRadius="30" Opacity="0.4" Width="200" Height="100" Margin="0,-510,0,0">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" ShadowDepth="10" Direction="0" Opacity="0.30"/>
+                </Border.Effect>
+            </Border>
+            <Border
+            Background="#B4D429" CornerRadius="10"  Width="200" Height="40" Margin="0,-280,0,0">
+                <Image Source="C:\Users\Dasha\source\repos\Cinema\images\3.png" Width="24" Height="40" Margin="19,-1,153,1"/>
+
+            </Border>
+            <Image Source="C:\Users\Dasha\source\repos\Cinema\images\4.png" Opacity="1" Width="24" Height="40" Margin="-137,-180,0,0"/>
+            <Border Grid.Column="0" Width="100" Height="100">
+                <TextBlock Text="Bonuses" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="13" FontFamily="Montserrat" FontWeight="Medium"  Foreground="#FFFF" Margin="6,-41,0,0"/>
+
+            </Border>
+            <Image Source="C:\Users\Dasha\source\repos\Cinema\images\5.png" Opacity="1" Width="24" Height="40" Margin="-137,-85,0,0"/>
+            <Border Grid.Column="0" Width="110" Height="100">
+
+                <TextBlock Text="Food and Drinks" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="13" FontFamily="Montserrat" FontWeight="Medium"  Foreground="#FFFF" Margin="11,7,0,0" Width="113"/>
+
+            </Border>
+
+            <Border Grid.Column="0" Width="100" Height="100">
+
+
+                <TextBlock Text="Home" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="13" FontFamily="Montserrat" FontWeight="SemiBold"  Foreground="#000000" Margin="6,-96,0,0"/>
+
+            </Border>
+
+            <Ellipse Width="50" Height="50" Fill="#000000" Margin="0,-520,110,0">
+            </Ellipse>
+
+
+            <Image Source="C:\Users\Dasha\source\repos\Cinema\images\2.png" Width="28" Height="40" Margin="0,-523,110,0"/>
+            <Border Grid.Column="0" Width="100" Height="100">
+
+
+                <TextBlock Text="Dashka" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="17" FontFamily="Montserrat" FontWeight="Thin" Foreground="White" Margin="30,-224,0,0" RenderTransformOrigin="0.506,1.972" />
+            </Border>
+            <Border Grid.Column="0" Width="130" Height="100">
+
+
+                <TextBlock Text="+38(063) 000 00 00" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10" FontFamily="Montserrat" FontWeight="Thin" Foreground="White" Margin="43,-199,0,0" RenderTransformOrigin="0.506,1.972" />
+            </Border>
+
+            <Border Grid.Column="0" Width="100" Height="100">
+                <TextBlock Text="Logout" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="13" FontFamily="Montserrat" FontWeight="Medium" Foreground="#FFFF" Margin="9,0,0,-313"/>
+            </Border>
+            <Image Source="C:\Users\Dasha\source\repos\Cinema\images\6.png" Width="20" Height="40" Margin="-20,710,110,0"/>
+
+
+
+
+
+            <!-- Друга частина -->
+            <Border Grid.Column="2">
+                <TextBlock Text="Друга частина" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Border>
+
+            <!-- Третя частина -->
+            <Border Grid.Column="3">
+                <TextBlock Text="Третя частина" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Border>
+
+        </Grid>
     </Grid>
 </Window>
