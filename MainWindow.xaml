@@ -4,13 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cinema" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d"
-        Title="MainWindow" Width="1920" Height="1080">
-    <Window.Background>
-        <ImageBrush ImageSource="Assets\Background.png"/>
-    </Window.Background>
+        Title="Cinema" Width="1920" Height="1080">
     <Grid>
-        
+        <!-- Background -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#0D0C0C" Offset="0" />
+                <GradientStop Color="#1B2949" Offset="0.25" />
+                <GradientStop Color="#27454B" Offset="0.5" />
+                <GradientStop Color="#4E3955" Offset="0.75" />
+                <GradientStop Color="#21171F" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="5" />
@@ -29,6 +35,10 @@
 
         <!-- Search -->
         <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="436*"/>
+                <RowDefinition Height="629*"/>
+            </Grid.RowDefinitions>
             <Border VerticalAlignment="Top" Margin="50,20,50,0">
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.5"/>
@@ -46,7 +56,7 @@
             </Border>
 
             <TextBox
-                Margin="70,30,50,0"
+                Margin="70,30,790,355"
                 Foreground="LightGray"
                 Text="Type to search..."
                 TextWrapping="Wrap" />
@@ -54,11 +64,11 @@
 
         <!-- Trailer -->
         <Grid Grid.Column="2">
-            <Border Width="850" Height="350" Margin="0,0,0,500">
+            <Border Width="850" Height="450" Margin="0,0,0,400">
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.5"/>
                 </Border.Effect>
-                <Border Background="White" Opacity="0.03" CornerRadius="30" Width="850" Height="350">
+                <Border Background="White" Opacity="0.03" CornerRadius="30" Width="850" Height="450">
                     <Border.BitmapEffect>
                         <OuterGlowBitmapEffect GlowColor="White" GlowSize="4"/>
                     </Border.BitmapEffect>
@@ -72,7 +82,7 @@
 
             <Grid
                 Width="200"
-                Margin="0,0,620,220">
+                Margin="50,0,620,50">
                 <Button
                     materialDesign:ButtonAssist.CornerRadius="25"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
@@ -86,70 +96,17 @@
 
         <!-- Films -->
         <Grid Grid.Column="2">
-            <Border Width="200" Height="300" Margin="0,220,650,0">
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.5"/>
-                </Border.Effect>
-                <Border Background="White" Opacity="0.03" CornerRadius="30" Width="200" Height="300">
-                    <Border.BitmapEffect>
-                        <OuterGlowBitmapEffect GlowColor="White" GlowSize="4"/>
-                    </Border.BitmapEffect>
-                    <Grid>
-                        <Grid.Effect>
-                            <BlurEffect Radius="20"/>
-                        </Grid.Effect>
-                    </Grid>
-                </Border>
-            </Border>
-
-            <Border Width="200" Height="300" Margin="0,220,210,0">
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.5"/>
-                </Border.Effect>
-                <Border Background="White" Opacity="0.03" CornerRadius="30" Width="200" Height="300">
-                    <Border.BitmapEffect>
-                        <OuterGlowBitmapEffect GlowColor="White" GlowSize="4"/>
-                    </Border.BitmapEffect>
-                    <Grid>
-                        <Grid.Effect>
-                            <BlurEffect Radius="20"/>
-                        </Grid.Effect>
-                    </Grid>
-                </Border>
-            </Border>
-
-            <Border Width="200" Height="300" Margin="220,220,0,0">
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.5"/>
-                </Border.Effect>
-                <Border Background="White" Opacity="0.03" CornerRadius="30" Width="200" Height="300">
-                    <Border.BitmapEffect>
-                        <OuterGlowBitmapEffect GlowColor="White" GlowSize="4"/>
-                    </Border.BitmapEffect>
-                    <Grid>
-                        <Grid.Effect>
-                            <BlurEffect Radius="20"/>
-                        </Grid.Effect>
-                    </Grid>
-                </Border>
-            </Border>
-
-            <Border Width="200" Height="300" Margin="650,220,0,0">
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="5" Direction="315" Color="Black" Opacity="0.5"/>
-                </Border.Effect>
-                <Border Background="White" Opacity="0.03" CornerRadius="30" Width="200" Height="300">
-                    <Border.BitmapEffect>
-                        <OuterGlowBitmapEffect GlowColor="White" GlowSize="4"/>
-                    </Border.BitmapEffect>
-                    <Grid>
-                        <Grid.Effect>
-                            <BlurEffect Radius="20"/>
-                        </Grid.Effect>
-                    </Grid>
-                </Border>
-            </Border>
-
+            <ListView x:Name="LVFilms" Margin="50,500,50,50">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                            <Image Width="100" Source="{Binding Photo}"/>
+                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="{Binding Rating}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
 
     </Grid>
